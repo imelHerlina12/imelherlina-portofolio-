@@ -1,0 +1,640 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <meta name="theme-color" content="#fff8fb">
+
+  <meta
+    name="description"
+    content="Imel's personal portfolio. Thoughtful websites, practical applications, and a creative touch."
+  >
+
+  <title>ImelHerlina|Portfolio</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- REUSABLE ILLUSTRATIONS -->
+  <svg class="svg-library" aria-hidden="true">
+    <defs>
+      <!-- PINK BOW -->
+      <symbol id="bow" viewBox="0 0 100 85">
+        <g
+          fill="#efb4cc"
+          stroke="#ce94ac"
+          stroke-width="2"
+          stroke-linejoin="round"
+        >
+          <path d="M45 29Q3-5 4 26Q5 58 45 43Z"/>
+          <path d="M55 29Q97-5 96 26Q95 58 55 43Z"/>
+
+          <path d="M42 40L23 78L41 69L49 83L54 43Z"/>
+          <path d="M57 40L78 78L60 69L52 83L47 43Z"/>
+
+          <ellipse cx="50" cy="36" rx="11" ry="16"/>
+        </g>
+      </symbol>
+
+      <!-- HELLO KITTY ILLUSTRATION -->
+      <symbol id="kitty" viewBox="0 0 320 310">
+        <ellipse
+          cx="160"
+          cy="287"
+          rx="96"
+          ry="12"
+          fill="#efdce5"
+        />
+
+        <g
+          stroke="#76636f"
+          stroke-width="4"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M109 202Q160 178 211 202L222 260
+               Q160 285 98 260Z"
+            fill="#f0b5ce"
+          />
+
+          <ellipse
+            cx="98"
+            cy="226"
+            rx="21"
+            ry="29"
+            transform="rotate(25 98 226)"
+            fill="#fffefd"
+          />
+
+          <ellipse
+            cx="222"
+            cy="226"
+            rx="21"
+            ry="29"
+            transform="rotate(-25 222 226)"
+            fill="#fffefd"
+          />
+
+          <ellipse
+            cx="126"
+            cy="270"
+            rx="31"
+            ry="17"
+            fill="#fffefd"
+          />
+
+          <ellipse
+            cx="194"
+            cy="270"
+            rx="31"
+            ry="17"
+            fill="#fffefd"
+          />
+
+          <path
+            d="M69 100L67 42Q69 28 84 35L128 59
+               Q160 51 192 59L236 35Q251 29 253 44
+               L252 103Q278 129 265 169
+               Q250 214 160 216Q69 214 54 169
+               Q42 129 69 100Z"
+            fill="#fffefd"
+          />
+        </g>
+
+        <g fill="#584851">
+          <ellipse cx="119" cy="143" rx="6" ry="9"/>
+          <ellipse cx="201" cy="143" rx="6" ry="9"/>
+        </g>
+
+        <ellipse
+          cx="160"
+          cy="159"
+          rx="11"
+          ry="8"
+          fill="#f3db91"
+          stroke="#76636f"
+          stroke-width="2"
+        />
+
+        <g fill="#fbe5ee">
+          <ellipse cx="95" cy="167" rx="15" ry="8"/>
+          <ellipse cx="225" cy="167" rx="15" ry="8"/>
+        </g>
+
+        <g
+          stroke="#76636f"
+          stroke-width="4"
+          stroke-linecap="round"
+        >
+          <path d="M78 139L35 130"/>
+          <path d="M76 156L30 157"/>
+          <path d="M81 174L40 187"/>
+
+          <path d="M242 139L285 130"/>
+          <path d="M244 156L290 157"/>
+          <path d="M239 174L280 187"/>
+        </g>
+
+        <g
+          fill="#e9a1bf"
+          stroke="#b67b96"
+          stroke-width="3"
+          stroke-linejoin="round"
+        >
+          <path d="M214 72Q177 27 172 64Q167 96 211 91Z"/>
+          <path d="M222 72Q256 29 263 65Q267 98 226 91Z"/>
+          <path d="M209 86L197 116L216 107L225 119L231 88Z"/>
+
+          <ellipse cx="218" cy="80" rx="14" ry="17"/>
+        </g>
+
+        <path
+          d="M160 231C143 213 130 235 160 250
+             C190 235 177 213 160 231Z"
+          fill="#fff7fb"
+        />
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- OPENING LOADING -->
+  <div id="loadingScreen" class="opening-screen" hidden>
+    <div class="opening-content">
+      <svg class="loading-bow" aria-hidden="true">
+        <use href="#bow"></use>
+      </svg>
+
+      <span class="eyebrow">A LITTLE PINK MOMENT</span>
+      <h1>Preparing something sweet...</h1>
+
+      <p class="muted">
+        Getting my porto ready for you.
+      </p>
+
+      <div
+        class="loading-track"
+        role="progressbar"
+        aria-label="Preparing the introduction"
+      >
+        <span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- WELCOME -->
+  <section
+    id="welcomeScreen"
+    class="opening-screen"
+    aria-labelledby="welcomeTitle"
+    hidden
+  >
+    <div class="opening-content">
+      <span class="eyebrow">CODE, CREATIVITY & A LITTLE PINK</span>
+
+      <svg
+        class="welcome-kitty"
+        role="img"
+        aria-label="Hello Kitty with a pink bow"
+      >
+        <use href="#kitty"></use>
+      </svg>
+
+      <h1 id="welcomeTitle" tabindex="-1">
+        Welcome to my Portofolio.
+      </h1>
+
+      <p class="muted">
+        A place for thoughtful code, creative ideas,
+        and the things I’m building.
+      </p>
+
+      <button id="enterButton" class="button primary" type="button">
+        Explore My Portfolio
+        <span aria-hidden="true">↗</span>
+      </button>
+
+      <p class="small-note">
+        Enter to continue.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN WEBSITE -->
+  <div id="portfolioSite">
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#home" aria-label="Back to home">
+          <svg aria-hidden="true">
+            <use href="#bow"></use>
+          </svg>
+
+          <span data-name>Imel Herlina</span><span class="brand-dot">.<em>dev</em></span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#services">Services</a>
+          <a href="#location">Location</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button
+          id="musicButton"
+          class="music-button"
+          type="button"
+          aria-label="Play music"
+          aria-pressed="false"
+        >
+          <span aria-hidden="true">♫</span>
+          <span id="musicText">Play music</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="home" class="hero container">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">WELCOME TO MY PORTOFOLIO</span>
+
+          <h1>
+            <span data-name>Imel Herlina</span>.<br>
+            <em>Lets create<br>Something sweet.</em>
+          </h1>
+
+          <p id="bio" class="hero-description">
+            I build clean websites and practical applications
+            with a creative touch.
+          </p>
+
+          <a class="role-badge" href="#about">
+            <span class="status-dot" aria-hidden="true"></span>
+            Fullstack Developer
+          </a>
+
+          <p class="small-note">
+            Bringing interfaces, logic, and data together.
+          </p>
+
+          <div class="hero-actions">
+            <a
+              id="cvButton"
+              class="button primary"
+              href="#contact"
+            >
+              Download CV
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <a class="button secondary" href="#projects">
+              Explore My Work
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="stats">
+            <div>
+              <strong id="projectStat">20+</strong>
+              <span>Projects</span>
+              <small>Ideas brought to life</small>
+            </div>
+
+            <div>
+              <strong id="experienceStat">2 years+</strong>
+              <span>Experience</span>
+              <small>Learning through building</small>
+            </div>
+
+            <div>
+              <strong id="clientStat">20+</strong>
+              <span>Clients</span>
+              <small>Collaboration and trust</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="kitty-halo"></div>
+
+          <span class="visual-caption caption-top">
+            a little creativity
+          </span>
+
+          <svg
+            class="hero-kitty"
+            role="img"
+            aria-label="Hello Kitty in a soft pink outfit"
+          >
+            <use href="#kitty"></use>
+          </svg>
+
+          <span class="visual-caption caption-bottom">
+            made with care
+          </span>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">GET TO KNOW ME</span>
+          <h2>A bit about <em>me.</em></h2>
+
+        </div>
+
+        <div class="about-grid">
+          <article class="card reveal">
+            <span class="card-symbol" aria-hidden="true">⌖</span>
+            <h3>Location</h3>
+            <p data-location>Indonesia</p>
+            <small>
+              My base for learning, creating,
+              and connecting with new opportunities.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-symbol" aria-hidden="true">&lt;/&gt;</span>
+            <h3>Role</h3>
+            <p>Fullstack Developer</p>
+            <small>
+              Building interfaces and the application
+              logic behind them.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-symbol" aria-hidden="true">↗</span>
+            <h3>Experience</h3>
+            <p id="aboutExperience">2 years+</p>
+            <small>
+              Growing through hands-on projects
+              and continuous learning.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="card-symbol" aria-hidden="true">✧</span>
+            <h3>Core Skills</h3>
+            <p id="focusSkills">HTML, CSS, JavaScript</p>
+            <small>
+              Focused on responsive layouts,
+              clarity, and usable solutions.
+            </small>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">A LITTLE OF MY WORK</span>
+          <h2><em>My Project.</em></h2>
+
+          <p>
+            A project i'm currently developing.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="coffee-preview">
+              <div class="mini-window">
+                <div class="window-bar">
+                  <span aria-hidden="true">● ● ●</span>
+                  <span>Kedaik</span>
+                </div>
+
+                <div class="coffee-content">
+                  <span class="coffee-eyebrow">
+                    FRESHLY BREWED, JUST FOR YOU
+                  </span>
+
+                  <h3>Coffe with love,<br>can make a better day.</h3>
+
+                  <div class="coffee-cup" aria-hidden="true">
+                    <span></span>
+                  </div>
+
+                  <div class="coffee-menu">
+                    <span>Home</span>
+                    <span>Food</span>
+                    <span>Drink</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-content">
+              <span class="badge">In development</span>
+
+              <h3>Web of simple shop</h3>
+
+              <p>
+                It's a web project to facilitate ordering via
+                an available menu, menu management, and 
+                basic transaction recording. 
+              </p>
+
+              <div class="tags">
+                <span>Menu</span>
+                <span>Transaction</span>
+                <span>Dashboard</span>
+              </div>
+
+              <p class="small-note">
+                The features are still on progress.
+                A public demo is not available yet.   
+              </p>
+            </div>
+          </article>
+
+         
+        </div>
+      </section>
+
+      <!-- SERVICES -->
+      <section id="services" class="section container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">HOW I CAN HELP</span>
+          <h2>Let’s make something <em>useful.</em></h2>
+
+          <p>
+            Thoughtful development support for
+            personal projects and growing ideas.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="card reveal">
+            <span class="service-number">01</span>
+            <h3>Web Development</h3>
+            <p>
+              Responsive websites with clean layouts
+              and a clear focus on your goals.
+            </p>
+            <small>
+              Landing pages, portfolios, and business websites.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="service-number">02</span>
+            <h3>Fullstack Development</h3>
+            <p>
+              Frontend interfaces and backend functionality
+              built around your project’s needs.
+            </p>
+            <small>
+              Connecting user experiences with logic and data.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="service-number">03</span>
+            <h3>Automation</h3>
+            <p>
+              Small scripts and workflows to help
+              simplify repetitive tasks.
+            </p>
+            <small>
+              Designed around your tools and processes.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="service-number">04</span>
+            <h3>Project Development</h3>
+            <p>
+              Focused Project that solve specific
+              problems without unnecessary complexity.
+            </p>
+            <small>
+              Prototypes, projects, lightweight tools, etc.
+            </small>
+          </article>
+
+          <article class="card reveal">
+            <span class="service-number">05</span>
+            <h3>Custom Systems</h3>
+            <p>
+              Tailored functionality shaped around
+              your workflow and requirements.
+            </p>
+            <small>
+              Scope and milestones agreed before development.
+            </small>
+          </article>
+        </div>
+      </section>
+
+      <!-- LOCATION -->
+      <section id="location" class="section container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">WHERE I CREATE</span>
+          <h2><em data-location>Indonesia</em></h2>
+
+          <p>
+            My little corner of the world,
+            connected to new possibilities.
+          </p>
+        </div>
+
+        <div class="map-card reveal">
+          <div class="map-heading">
+            <span class="location-label">
+              <span aria-hidden="true">⌖</span>
+              <span data-location>Indonesia</span>
+            </span>
+
+            <a
+              id="mapLink"
+              href="https://www.google.com/maps/search/?api=1&amp;query=Indonesia"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View on Google Maps ↗
+            </a>
+          </div>
+
+          <iframe
+            id="locationMap"
+            title="General location map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+
+          <p class="small-note">
+            This map shows my general area,
+            not a private residential address.
+          </p>
+        </div>
+      </section>
+
+      <!-- CONTACT: PLAIN EMAIL ONLY -->
+      <section id="contact" class="section container">
+        <div class="contact-card reveal">
+          <svg class="contact-bow" aria-hidden="true">
+            <use href="#bow"></use>
+          </svg>
+
+          <span class="eyebrow">LET’S KEEP IN TOUCH</span>
+
+          <h2>Contact <em>me.</em></h2>
+
+          <p class="contact-description">
+            Have a project in mind or want to collaborate?
+            I’d love to hear from you.
+          </p>
+
+          <span class="email-label">EMAIL</span>
+
+          <!-- Plain selectable text. No button or link. -->
+          <p class="email-address" data-email>
+            imelsyafitri12@gmail.com
+          </p>
+
+          <p class="small-note">
+            Open to project discussions and collaborations.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer container">
+      <p>Thoughtful code, a creative touch.</p>
+
+      <p>
+        © <span id="year"></span>
+        <span data-name>Imel Herlina</span>
+      </p>
+    </footer>
+  </div>
+
+  <audio id="backgroundMusic" loop preload="none"></audio>
+
+  <p
+    id="notification"
+    class="notification"
+    role="status"
+    aria-live="polite"
+  ></p>
+
+  <noscript>
+    <p class="noscript-note">
+      Enable JavaScript to use the introduction,
+      music controls, and profile settings.
+    </p>
+  </noscript>
+</body>
+</html>
